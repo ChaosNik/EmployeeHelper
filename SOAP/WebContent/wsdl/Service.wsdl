@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://api.etfbl.net" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://api.etfbl.net" xmlns:intf="http://api.etfbl.net" xmlns:tns1="http://model.etfbl.net" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://api.etfbl.net" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://model.etfbl.net"/>
+   <element name="blockUser">
+    <complexType>
+     <sequence>
+      <element name="adminUsername" type="xsd:string"/>
+      <element name="username" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="blockUserResponse">
+    <complexType>
+     <sequence>
+      <element name="blockUserReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="newUser">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="user" type="tns1:User"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="newUserResponse">
+    <complexType>
+     <sequence>
+      <element name="newUserReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://model.etfbl.net" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="User">
+    <sequence>
+     <element name="admin" type="xsd:boolean"/>
+     <element name="blocked" type="xsd:boolean"/>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="username" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="newUserRequest">
+
+      <wsdl:part element="impl:newUser" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="blockUserRequest">
+
+      <wsdl:part element="impl:blockUser" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="blockUserResponse">
+
+      <wsdl:part element="impl:blockUserResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="newUserResponse">
+
+      <wsdl:part element="impl:newUserResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Service">
+
+      <wsdl:operation name="blockUser">
+
+         <wsdl:input message="impl:blockUserRequest" name="blockUserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:blockUserResponse" name="blockUserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="newUser">
+
+         <wsdl:input message="impl:newUserRequest" name="newUserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:newUserResponse" name="newUserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ServiceSoapBinding" type="impl:Service">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="blockUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="blockUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="blockUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="newUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="newUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="newUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ServiceService">
+
+      <wsdl:port binding="impl:ServiceSoapBinding" name="Service">
+
+         <wsdlsoap:address location="http://localhost:8080/SOAP/services/Service"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

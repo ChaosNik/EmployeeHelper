@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:controller="org.unibl.etf.mdp.chat.view.MessageViewController" minHeight="250.0" minWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+   	  <TextField fx:id="txtAdminMessage" layoutX="5" layoutY="5" prefHeight="20.0" prefWidth="245.0" />
+   	  <Button fx:id="btnMulticast" layoutX="260" layoutY="5" mnemonicParsing="false" onAction="#onMulticast" prefHeight="20.0" prefWidth="100.0" text="Multicast" />
+   	  <Button fx:id="btnExit" layoutX="370.0" layoutY="5.0" mnemonicParsing="false" onAction="#onExit" prefHeight="20.0" prefWidth="100.0" text="Izađi" />
+      <ListView fx:id="listUsers" layoutX="5" layoutY="45.0" prefHeight="195.0" prefWidth="245.0" />
+      <Button fx:id="btnUsage" layoutX="370.0" layoutY="50.0" mnemonicParsing="false" onAction="#onUsage" prefHeight="20.0" prefWidth="100.0" text="Aktivnost" />
+      <Button fx:id="btnRemoteScreen" layoutX="370.0" layoutY="80.0" mnemonicParsing="false" onAction="#onRemoteScreen" prefHeight="20.0" prefWidth="100.0" text="Nadgledanje" />
+      <Button fx:id="btnBlockUser" layoutX="370.0" layoutY="110.0" mnemonicParsing="false" onAction="#onBlockUser" prefHeight="20.0" prefWidth="100.0" text="Blokiraj" />
+      <Label layoutX="280.0" layoutY="150.0" prefHeight="20.0" prefWidth="80.0" text="Korisnicko ime"/>
+      <TextField fx:id="txtUsername" layoutX="370" layoutY="145" prefHeight="20.0" prefWidth="100.0"/>
+      <Label layoutX="280.0" layoutY="180.0" prefHeight="20.0" prefWidth="80.0" text="       Lozinka"/>
+      <PasswordField fx:id="txtPassword" layoutX="370" layoutY="175.0" prefHeight="20.0" prefWidth="100.0"/>
+      <Button fx:id="btnNewUser" layoutX="370.0" layoutY="210.0" mnemonicParsing="false" onAction="#onNewUser" prefHeight="20.0" prefWidth="100.0" text="Dodaj korisnika" />
+   </children>
+</AnchorPane>

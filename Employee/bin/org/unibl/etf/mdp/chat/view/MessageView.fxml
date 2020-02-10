@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:controller="org.unibl.etf.mdp.chat.view.MessageViewController" minHeight="570.0" minWidth="850.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+   	  <MenuBar fx:id="menuBar" layoutX="0" layoutY="0">
+   	  	<Menu mnemonicParsing="false" text="File">
+	   	  	<MenuItem mnemonicParsing="false" onAction="#onUsage" text="Aktivnost"/>
+	        <MenuItem mnemonicParsing="false" onAction="#onChangePassword" text="Zamjena lozinke"/>
+	        <MenuItem mnemonicParsing="false" onAction="#onExit" text="Izlaz"/>
+        </Menu>
+   	  </MenuBar>
+      <Label fx:id="txtAdminMessage" layoutX="10.0" layoutY="30.0" prefHeight="20.0" prefWidth="840.0" />
+      <ListView fx:id="listUsers" layoutX="5" layoutY="60.0" prefHeight="500.0" prefWidth="240" />
+      <ListView fx:id="listMessages" layoutX="245.0" layoutY="60.0" prefHeight="451.0" prefWidth="353.0" />
+      <ListView fx:id="listFiles" layoutX="600.0" layoutY="60.0" prefHeight="451.0" prefWidth="245.0" />
+      <TextArea fx:id="txtMessage" layoutX="245.0" layoutY="512.0" prefHeight="48.0" prefWidth="205.0" />
+      <Button fx:id="btnSend" layoutX="450.0" layoutY="512.0" mnemonicParsing="false" onAction="#onSend" prefHeight="48.0" prefWidth="70.0" text="Pošalji" />
+      <Button fx:id="btnBroadcast" layoutX="520.0" layoutY="512.0" mnemonicParsing="false" onAction="#onBroadcast" prefHeight="48.0" prefWidth="70.0" text="Objavi" />
+      <Button fx:id="btnSendFile" layoutX="600.0" layoutY="512.0" mnemonicParsing="false" onAction="#onSendFile" prefHeight="48.0" prefWidth="120.0" text="Pošalji fajl" />
+      <Button fx:id="btnDownload" layoutX="725.0" layoutY="512.0" mnemonicParsing="false" onAction="#onDownload" prefHeight="48.0" prefWidth="120.0" text="Preuzmi fajl" />
+   </children>
+</AnchorPane>
